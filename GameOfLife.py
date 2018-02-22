@@ -1,7 +1,7 @@
 import time
 import os
 from random import *
-
+#hello
 # O for alive, blank area for dead
 board = [['O' for x in range(20)] for y in range(10)]
 
