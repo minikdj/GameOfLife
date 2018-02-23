@@ -29,9 +29,71 @@ def draw_board():
 
 def check_top_left():
 	count = 0
-
+	
+	if board[0][1] == 'O':
+		count += 1
+	if board[1][1] == 'O':
+		count += 1
+	if board[1][0] == 'O':
+		count += 1
+	
+	if board[0][0] == 'O':
+		if count < 2:
+			new_board[0][0] = ''
+		else:
+			new_board[0][0] = 'O'
+	else:
+		if count == 3:
+			new_board[0][0] = 'O'
+		else:
+			new_board[0][0] = ''
 def check_top_right():
 	count = 0
+
+	if board[0][len(board[0]) - 2] == 'O':
+		count += 1
+	if board[1][len(board[0]) - 2] == 'O':
+		count += 1
+	if board[1][len(board[0]) - 1] == 'O':
+		count += 1
+	
+	if board[0][len(board[0]) - 1] == 'O':
+		if count < 2:
+			new_board[0][len(board[0]) - 1] = ''
+		else:
+			new_board[0][len(board[0]) - 1] = 'O'
+	else:
+		if count == 3:
+			new_board[0][len(board[0]) - 1] = 'O'
+		else:
+			new_board[0][len(board[0]) - 1] = ''
+def check_top_middle():
+	for i in range(1,len(board[i]) - 1):
+		count = 0
+
+		if board[0][i - 1] == 'O':
+			count += 1
+		if board[1][i - 1] == 'O':
+			count += 1
+		if board[1][i] == 'O':
+			count += 1
+		if board[1][i + 1] == 'O':
+			count += 1
+		if board[0][i + 1] == 'O':
+			count += 1
+		
+		if board[0][i] == 'O':
+			if count < 2:
+				new_board[0][i] = ''
+			elif count > 3:
+				new_board[0][i] = ''
+			else:
+				new_board[0][i] = 'O'
+		else:
+			if count == 3:
+				new_board[0][i] = 'O'
+			else:
+				new_board[0][i] = ''
 
 def check_bottom_left():
 	count = 0
@@ -42,7 +104,7 @@ def check_bottom_right():
 def check_top():
 	check_top_left()
 	check_top_right()
-	
+	check_top_middle()
 def check_left():
 
 def check_right():
