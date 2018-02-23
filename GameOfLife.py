@@ -27,18 +27,29 @@ def draw_board():
 			print(board[x][y], end=' ')
 		print('\n')
 
+def check_top_left():
+	count = 0
+
+def check_top_right():
+	count = 0
+
+def check_bottom_left():
+	count = 0
+
+def check_bottom_right():
+	count = 0
+
 def check_top():
-	#checking the corners
-	if board[0][0] == '':
-	else:
-	if board[len(board)][len(board[0])] == '':
-	else:
+	check_top_left()
+	check_top_right()
 	
 def check_left():
 
 def check_right():
 
 def check_bottom():
+	check_bottom_left()
+	check_bottom_right()
 
 def check_border():
 	check_top()
